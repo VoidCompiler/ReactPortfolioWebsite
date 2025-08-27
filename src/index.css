@@ -1,0 +1,291 @@
+/* Reset & base */
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #37353E; /* dark gray background */
+  color: #D3DAD9; /* light gray text */
+}
+
+/* App container */
+.app {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #44444E; /* dark gray */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar li {
+  list-style: none;
+  position: relative;
+}
+
+.navbar li button {
+  background: none;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  color: #D3DAD9;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s ease, border-bottom 0.2s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.navbar li button:hover {
+  color: #ffffff;
+  border-bottom: 2px solid #D3DAD9; /* underline on hover */
+}
+
+.navbar li button.active {
+  color: #ffffff;
+  border-bottom: 2px solid #ffffff; /* underline active state */
+  font-weight: 600;
+}
+
+/* Dropdown menu - vertical list */
+.dropdown-menu {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #555555; /* darker gray accent */
+  border-radius: 8px;
+  overflow: hidden;
+  min-width: 200px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.dropdown-menu li {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+  color: #D3DAD9;
+}
+
+.dropdown-menu li:hover {
+  background-color: #D3DAD9;
+  color: #37353E;
+}
+
+/* Main content */
+main {
+  background: #44444E;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Headings */
+h1, h2 {
+  color: #D3DAD9; /* light gray headings */
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Video container (responsive) */
+.video-container {
+  margin: 1.5rem 0;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+}
+
+/* Product links */
+.product-links {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.product-links a {
+  padding: 0.6rem 1.2rem;
+  background-color: #555555; /* darker gray accent */
+  color: #D3DAD9;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.product-links a:hover {
+  background-color: #D3DAD9;
+  color: #37353E;
+  transform: scale(1.05);
+}
+
+/* Content buttons */
+button.primary {
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #555555; /* darker gray accent */
+  color: #D3DAD9;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button.primary:hover {
+  background-color: #D3DAD9;
+  color: #37353E;
+  transform: scale(1.05);
+}
+
+
+
+.top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* aligns top of title and cube */
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Portfolio title styling */
+.portfolio-title {
+  font-size: 5rem;
+  font-weight: 300;
+  background: linear-gradient(to right, hsl(140, 76%, 59%), rgba(226, 97, 114, 1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 1rem 0;
+  flex: 2; /* text takes more space */
+}
+
+/* 3D render container */
+.about-render {
+  flex: 1;
+  max-width: 500px; /* adjust cube size */
+}
+
+/* Top row container (title + 3D render) */
+.top-row {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Fade out top row when scrolling down */
+.top-row.fade-out {
+  opacity: 0;
+  transform: translateY(-50px);
+}
+
+/* About Me text initial hidden state */
+.about-text {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  line-height: 1.6;
+  color: #D3DAD9;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+/* About Me text visible when scrolled into view */
+.about-text.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Optional: make the section responsive */
+.about-section {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .top-row {
+    flex-direction: column;
+  }
+
+  .portfolio-title {
+    font-size: 3rem;
+    text-align: center;
+  }
+
+  .about-render {
+    margin-top: 2rem;
+    max-width: 300px;
+  }
+}
+
+/* Responsive adjustments MOBILE */
+@media (max-width: 800px) {
+  .top-row {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-render {
+    max-width: 10%;
+    max-height: 10%;
+    margin-top: 1rem;
+  }
+
+  .portfolio-title {
+    text-align: center;
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-links {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+}
